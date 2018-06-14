@@ -1,6 +1,6 @@
-// randomly generate a team
-// remove team from list 
-
+let player1 = [];
+let player2 = [];
+let counter = 0;
 const teams = ["Russia", 
 "Saudi Arabia", 
 "Egypt", 
@@ -35,9 +35,8 @@ const teams = ["Russia",
 "Poland"];
 
 
-
-
-
+// randomly generate a team
+// remove team from list 
 function generateTeam() {
     
         var team = teams[Math.floor(Math.random() * teams.length)];
@@ -51,12 +50,24 @@ function generateTeam() {
         if (teams.length === 0) {
             document.getElementById("displayEl").innerHTML = "thats all folks";
         } else {
-
             document.getElementById('displayEl').innerHTML = team;
-        }
-        
-        console.log(team);  
+        } 
 
+    addTeamToPlayer(team);
+    counter ++
+    console.log(counter);
+}
+
+
+// add team alternate player array 
+function addTeamToPlayer(team) {
+    if (counter % 2 === 0) {
+        player1.push(team);
+        console.log(player1);
+    } else if (Math.abs(counter % 2) == 1) {
+        player2.push(team);
+        console.log(player2);
+    }
 }
 
 
