@@ -34,7 +34,6 @@ const teams = ["Russia",
 "Japan",
 "Poland"];
 
-
 // randomly generate a team
 // remove team from list 
 function generateTeam() {
@@ -54,20 +53,27 @@ function generateTeam() {
         } 
 
     addTeamToPlayer(team);
-    counter ++
-    console.log(counter);
+    counter ++;
 }
-
 
 // add team alternate player array 
 function addTeamToPlayer(team) {
     if (counter % 2 === 0) {
         player1.push(team);
         console.log(player1);
+        displayArray1(player1);
     } else if (Math.abs(counter % 2) == 1) {
         player2.push(team);
         console.log(player2);
+        displayArray2(player2);
     }
 }
 
+function displayArray1(player) {
+    document.querySelector('.player1').innerHTML = player1;
+}
+
+function displayArray2(player) {
+    document.querySelector('.player2').innerHTML = player2;
+}
 
