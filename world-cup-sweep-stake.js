@@ -1,5 +1,8 @@
 let player1 = [];
 let player2 = [];
+// let player1Team = document.querySelector('.player1');
+// let player2Team = document.querySelector('.player2');
+
 let counter = 0;
 const teams = ["Russia", 
 "Saudi Arabia", 
@@ -58,22 +61,34 @@ function generateTeam() {
 
 // add team alternate player array 
 function addTeamToPlayer(team) {
-    if (counter % 2 === 0) {
+    if (isEven()) {
         player1.push(team);
-        console.log(player1);
-        displayArray1(player1);
-    } else if (Math.abs(counter % 2) == 1) {
+        displayTeams(player1);
+        
+    } else if (isOdd()) {
         player2.push(team);
-        console.log(player2);
-        displayArray2(player2);
+        displayTeams(player2);
     }
 }
 
-function displayArray1(player) {
-    document.querySelector('.player1').innerHTML = player1;
+function displayTeams(player) {
+    const li = document.createElement("LI");
+    li.innerHTML = player.slice(-1)[0];
+    if (isEven()) {
+        document.querySelector('.player1').appendChild(li);
+    } else if (isOdd()) {
+        document.querySelector('.player2').appendChild(li);
+    } else if (teams === 0) {
+        document.getElementById('randomTeam').style.display = 'none';
+    }
+ }
+
+function isOdd() {
+   if (Math.abs(counter % 2) == 1)
+   return true;
 }
 
-function displayArray2(player) {
-    document.querySelector('.player2').innerHTML = player2;
+function isEven() {
+    if (counter % 2 === 0) 
+    return true;
 }
-
