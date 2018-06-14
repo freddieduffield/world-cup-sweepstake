@@ -5,13 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>World Cup Sweep Stake Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="world-cup-sweep-stake.js"></script>
 </head>
 <body>
-    <div id="displayEl"></div>
-    <button id="randomTeam" onclick="generateTeam()">generate team</button>
-    <ul class="player1"></ul>
-    <div class="player2"></div>
+<h1 class="mainTitle">World Cup SweepStake Generator</h1>
+    <div class="playingArea">
+    <h2 id="selectedTeam" class="selectedTeam"></h2>
+    <div class="pitch">
+        <h3 class="player1Title">Player 1</h3>
+        <ul class="player1"></ul>
+        <h3 class="player2Title">Player 2</h3>
+        <ul class="player2"></ul>
+    </div>
+    <div id="randomTeam" class="button" onclick="generateTeam()">Pick a Team</div>
+    </div>
 </body>
 </html>

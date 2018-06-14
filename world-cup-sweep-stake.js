@@ -50,9 +50,9 @@ function generateTeam() {
         }
     
         if (teams.length === 0) {
-            document.getElementById("displayEl").innerHTML = "thats all folks";
+            document.getElementById("selectedTeam").innerHTML = "thats all folks";
         } else {
-            document.getElementById('displayEl').innerHTML = team;
+            document.getElementById('selectedTeam').innerHTML = team;
         } 
 
     addTeamToPlayer(team);
@@ -78,7 +78,7 @@ function displayTeams(player) {
         document.querySelector('.player1').appendChild(li);
     } else if (isOdd()) {
         document.querySelector('.player2').appendChild(li);
-    } else if (teams === 0) {
+    } else if (teams.length === 0) {
         document.getElementById('randomTeam').style.display = 'none';
     }
  }
